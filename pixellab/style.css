@@ -107,3 +107,171 @@ nav a:hover::after {
     transform: translateY(-3px);
     box-shadow: 0 6px 20 px rgba (0, 0, 0, 0.3);
 }
+
+/* ESTILOS DA SEÇÃO DE SERVIÇOS */
+.services-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(6, 22, 94, 0.95) 0%, rgba(38, 17, 160, 0.95) 100%);
+    color: white;
+    text-align: center;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.section-description {
+    max-width: 700px;
+    margin: 0 auto 60px auto; 
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.services-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha em telas menores */
+}
+
+.service-card {
+    background-color: rgba(25, 10, 80, 0.7); /* Cor de fundo dos cards, um pouco mais escura que o fundo principal */
+    border-radius: 15px;
+    padding: 40px;
+    flex: 1 1 300px; /* Flexível, com largura base de 300px */
+    max-width: 350px; /* Largura máxima para os cards */
+    text-align: left; /* Conteúdo interno alinhado à esquerda */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.icon-wrapper {
+    background-color: #4a3eef;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.icon-wrapper i {
+    font-size: 28px;
+    color: white;
+}
+
+.service-card h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.service-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* NOVOS ESTILOS PARA A SEÇÃO DE ESTATÍSTICAS */
+
+.stats-section {
+    background-color: black;
+    padding: 80px 20px;
+    text-align: center;
+    color: beige;
+    background: radial-gradient(circle at center, #1a1a33 0%, #4a3eef 100%);
+}
+
+.stats-container {
+    max-width: 1200px; /*largura máxima */
+    margin: 0 auto; /*centralize o container horizontalmente*/
+    display: flex;
+    flex-wrap: wrap; /*permite que os itens quebrem para a prox linha em telhas menores*/
+    justify-content: space-around; /*distribui com espaço ao redor*/
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.stat-item {
+    flex: 1; /* permite que os itens cresçam e encolham */
+    min-width: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.stat-number {
+    font-size: 4.5em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.stat-description {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgb(255, 255, 255);
+    margin-top: 0;
+}
+
+/* Media Queries para Responsividade */
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 60px 15px;
+    }
+
+    .stat-item {
+        min-width: 45%;
+    }
+
+    .stat-number {
+        font-size: 3.5em;
+    }
+
+    .stat-description {
+        font-size: 1em;
+    }    
+}
+
+@media (max-width: 480px) {
+    .stats-section {
+        padding: 40px 10px;
+    }
+
+    .stats-container {
+        flex-direction: column; /*Empilha os itens verticalmente em telas muito pequenas */
+        gap: 40px;
+    }
+
+    .stat-item {
+        min-width: 100%;
+    }
+
+    .stat-number {
+        font-size: 1em;
+    }
+
+    .stat-description {
+        font-size: 0.9em;
+    }
+
+}
