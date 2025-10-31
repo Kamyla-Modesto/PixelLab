@@ -91,7 +91,7 @@ nav a:hover::after {
     opacity: 0.9;
 }
 
-.cta-buttom {
+.cta-button {
     display: inline-block;
     background: rgb(243, 236, 236);
     color: blue;
@@ -103,9 +103,9 @@ nav a:hover::after {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.cta-buttom:hover {
+.cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20 px rgba (0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ESTILOS DA SEÇÃO DE SERVIÇOS */
@@ -274,4 +274,168 @@ nav a:hover::after {
         font-size: 0.9em;
     }
 
+}
+
+/* NOVOS ESTILOS PARA A SEÇÃO DE DEPOIMENTOS */
+
+.testimonials-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(6, 22, 94, 0.95) 0%, rgba(38, 17, 160, 0.95) 100%);
+    color: #ffffff;
+}
+
+.testimonials-section .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonials-section-title {
+    font-size: 3em;
+    font-weight: 700;   
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container do carrossel */
+.carousel-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden; /*Esconde o conteúdo que transborda horizontalmente */
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.testimonial-cards-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    scroll-snap-type: x mandatory; /* Habilita o "snap" de rolagem para os cartões */
+    -webkit-overflow-scrolling: touch; /*Suaviza e rolagem em dispositivos ios */
+    overflow-x: auto; /* Permita a rolagem horizontal */
+    justify-content: flex-start; /*Alinha os cartões ao início para a rolagem*/
+}
+
+/* Cartão de Depoimento Individual */
+
+.testimonials-card {
+    background-color: #1a1b3f;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: left;
+    flex-shrink: 0; /* Impede que o cartão encolha */
+    width: calc((100% / 3) - 20px); /* Calcula a largura para 3 cartões com espaçamento */
+    max-width: 380px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    scroll-snap-align: center; /* Ponto de "snap" para cada cartão (centraliza ao rolar) */
+}
+
+/*Cabeçalho do Cartão (Avatar, Nome, Estrelas) */
+.testimonials-card .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.testimonials-card .Avatar {
+    width: 30px;
+    height: 60px;
+    border-radius: 80%;
+    margin-right: 15px;
+    object-fit: cover;
+    border: 2px solid #5d5e75;
+}
+
+.testimonials-card .user-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+}
+
+.testimonials-card .user-handle {
+    font-size: 0.9em;
+    color: #a0a0b8;
+}
+
+.testimonials-card .stars {
+    display: flex;
+    font-size: 1.3em;
+    margin-left: auto;
+    gap: 3px;
+}
+
+.testimonials-card .star-filled {
+    color: #8a8af8;
+}
+
+.testimonials-card .star.empty {
+    color: #5d5e75;
+}
+
+.testimonial-text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* Paginação do Carrossel (Pontos) */
+
+.carousel-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.carousel-pagination .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #5d5e75;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-pagination .dot.active {
+    background-color: #ffffff;
+}
+
+/* Resposividade da Seção de Depoimentos */
+@media (max-width: 1200px) {
+    .testimonials-card {
+        width: calc(50% - 20px);
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section-title {
+        font-size: 2.5em;
+    }
+    .testimonials-section-subtitle {
+        font-size: 1em;
+    }
+    .testimonials-card{
+        width: calc(100% - 40px);
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 480p) {
+     .testimonials-section-title {
+        font-size: 2em;
+    }
+    .testimonials-section {
+        font-size: 50px 0;
+    }
+    .testimonials-card{
+        width: calc(100% - 30px);
+    }
+    .carousel-pagination{
+        margin-top: 30px;
+    }
 }
