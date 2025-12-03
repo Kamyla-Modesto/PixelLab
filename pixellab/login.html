@@ -6,42 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelLab - Login</title>
     <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
+    <div class="accessibility-bar" role="toolbar" aria-label="Barra de acessibilidade">
+        <div class="accessibility-title">Acessibilidade:</div>
+        <div class="accessibility-controls">
+            <button class="accessibility-btn" id="increase-font" aria-label="Aumentar tamanho da fonte">
+                A+ Aumentar Fonte
+            </button>
+            <button class="accessibility-btn" id="decrease-font" aria-label="Diminuir tamanho da fonte">
+                A- Diminuir Fonte
+            </button>
+            <button class="accessibility-btn" id="high-contrast" aria-label="Ativar alto contraste">
+                Alto Contraste
+            </button>
+            <button class="accessibility-btn" id="normal-view" aria-label="Voltar à visualização normal">
+                Visualização Normal
+            </button>
+        </div>
+    </div>
+
     <div class="login-container">
         <div class="logo">PixelLab</div>
         <h2 class="login-title">Faça login em sua conta</h2>
-
         <form id="loginform">
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <div class="input-with-icon">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
-                </div>
-                <div class="error-message" id="emailError">Por favor, insira um e-mail válido</div>
-            </div>
+                <div class="form-group">
 
-            <div class="form-group">
-                <label for="password">Senha</label>
+                    <label for="email">E-mail</label>
+
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" 
+                        name="email"
+                        id="email" 
+                        class="form-control" 
+                        placeholder="seu@email.com" required>
+
+                    </div>
+                    <div class="error-message" id="emailError" role="alert" aria-live="polite">Por favor, insira um e-mail
+                        válido
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                <label for="password" class="required">Senha</label>
                 <div class="input-with-icon">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" class="form-control" placeholder="Sua senha" required>
+                    <input type="password" id="password" name="password" aria-required="true" class="form-control"
+                        aria-describedby="password-error" placeholder="Digite sua senha" required>
+                    <button type="button" class="password-toggle" id="toggle-password" aria-label="Mostrar senha"
+                        aria-pressed="false">
+                        Mostrar
+                    </button>
                 </div>
-                <div class="error-message" id="passwordError">A senha deve ter pelo menos 6 caracteres</div>
+                <div id="password-error" class="error-message" role="alert" aria-live="polite">
+                    A senha deve ter pelo menos 6 caracteres
+                </div>
             </div>
 
-            <button type="submit" class="login-button">Entrar</button>
-            <div class="sucess-message" id="loginSuccess">Login realizado com sucesso!</div>
+                <button type="submit" class="login-button">Entrar</button>
+                <div class="success-message" id="success-message" role="alert" aria-live="assertive">
+                    Login realizado com sucesso! Redirecionando...</div>
         </form>
 
         <div class="login-links">
             <a href="#" id="forgotPassword">Esqueci minha senha</a>
-            <a href="#" id="rememberMe">
+            <div id="rememberMe" class="remember-group">
                 <input type="checkbox" id="rememberCheckbox">
                 <label for="rememberCheckbox">Lembrar-me</label>
-            </a>
+            </div>
         </div>
 
         <div class="divider">
@@ -55,7 +92,7 @@
             <div class="social-button">
                 <i class="fab fa-facebook"></i>
             </div>
-             <div class="social-button">
+            <div class="social-button">
                 <i class="fab fa-twitter"></i>
             </div>
         </div>
@@ -64,8 +101,9 @@
             Não tem uma conta? <a href="#" id="signupLink">Cadastre-se</a>
         </div>
     </div>
-
     <script src="loginjs.js"></script>
+    <script src="acessibilidade.js"></script>
 </body>
+    
 
 </html>

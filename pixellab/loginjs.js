@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('loginForm');
+    const loginform = document.getElementById('loginform');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
-    const passwordError = document.getElementById('passwordError')
+    const passwordError = document.getElementById('password-error')
     const emailError = document.getElementById('emailError');
-    const loginSuccess = document.getElementById('loginSuccess');
+    const loginSuccess = document.getElementById('success-message');
     const forgotPassword = document.getElementById('forgotPassword');
     const signupLink = document.getElementById('signupLink');
 
@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 emailInput.style.borderColor = 'rgba(255, 255, 255, 0.2)';
             } else {
                 emailError.style.display = 'block';
-                passwordInput.style.borderColor = '#ff6b6b';
+                emailInput.style.borderColor = '#ff6b6b';
             }
         });
 
         // Envio do formulário
-        loginForm.addEventListener('submit', function (e) {
+        loginform.addEventListener('submit', function (e) {
             e.preventDefault();
 
             const emailValid = validateEmail(emailInput.value);
@@ -60,14 +60,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
                 if(!passwordValid) {
-                passwordError.style.display = 'block';
+                passwordError.style.display ='block';
                 passwordInput.style.borderColor = '#ff6b6b';
             }
         }
     });
 
         // Link "Esqueci minha senha"
-    forgetPassword.addEventListener('click', function (e) {
+    forgotPassword.addEventListener('click', function (e) {
         e.preventDefault();
         alert('Funcionalidade de recuperação de senha será implementada em breve!');
     });
